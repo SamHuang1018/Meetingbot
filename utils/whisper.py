@@ -62,7 +62,7 @@ class Transcriber:
             self._model = WhisperModel(self.model_size, device=self.device, compute_type=self.compute_type)
             self._initialized = True
 
-    def __new__(cls):
+    def __new__(cls, *args, **kwargs):
         if cls._instance is None:
             cls._instance = super(Transcriber, cls).__new__(cls)
         return cls._instance
